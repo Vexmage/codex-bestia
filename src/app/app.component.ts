@@ -10,18 +10,22 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule],
   template: `
     <mat-toolbar color="primary">
-      <span class="logo">Codex Bestia</span>
+      <mat-icon>pets</mat-icon>
+      <span>Codex Bestia</span>
       <span class="spacer"></span>
+      <a mat-button routerLink="/">Home</a>
       <a mat-button routerLink="/monsters">Monsters</a>
     </mat-toolbar>
-    <main class="container">
-      <router-outlet />
+
+    <main class="content">
+      <router-outlet></router-outlet>
     </main>
   `,
   styles: [`
-    .spacer { flex: 1 }
-    .container { padding: 1rem; max-width: 1100px; margin: 0 auto; }
-    .logo { font-weight: 600; letter-spacing: .3px; }
+    .spacer { flex: 1 1 auto; }
+    .content {
+      padding: 1rem;
+    }
   `]
 })
 export class AppComponent {}
